@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/main.js"></script>
+    <title>FSIA Cumulocity</title>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="container">
+            <div class="header" id="popupHeader">
+                Feature Security Impact Analysis
+            </div>
+
+            <div class="content contentContainer">
+                <div class="questions">
+                    <ul id="questions">
+                        <li class="parent">
+                            <input class="parentCheckbox" type="checkbox">
+                            <label> Does the feature have a web interface?</label>
+                            <ul>
+                                <li><input type="checkbox">
+                                    <label>Does the feature take user input?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Does the feature generate HTML output?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Do you have CSRF protection in your application?</label>
+                                </li>
+
+                                <li><input type="checkbox">
+                                    <label>Does the feature implement security headers?</label>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="parent">
+                            <input class="parentCheckbox" type="checkbox">
+                            <label> Does the feature implement email functionality?</label>
+                            <ul>
+                                <li><input type="checkbox">
+                                    <label>Does the feature take user input into email body?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Does the feature take user supplied SMTP configurations?</label>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="parent">
+                            <input class="parentCheckbox" type="checkbox">
+                            <label> Does the feature implement CAPTCHA functionality?</label>
+
+                        </li>
+
+                        <li class="parent">
+                            <input class="parentCheckbox" type="checkbox">
+                            <label> Does the feature make use of any outbound connections?</label>
+                            <ul>
+                                <li><input type="checkbox">
+                                    <label>Does the feature use stored passwords?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Does the feature provide user defined configurations?</label>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <input class="parentCheckbox" type="checkbox">
+                            <label> Does the feature provide file operations?</label>
+                            <ul>
+                                <li><input type="checkbox">
+                                    <label>Does the feature use temporary files?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Does the feature provide file upload functionality to the server?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Does the feature provide opening a file based on user-supplied input?</label>
+                                </li>
+
+                                <li><input type="checkbox">
+                                    <label>Does the feature provide file download functionality?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Does the feature provide zip extraction functionality?</label>
+                                </li>
+
+                                <li><input type="checkbox">
+                                    <label>Does the feature provide functionality to upload multiple file
+                                        extensions?</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <input class="parentCheckbox" type="checkbox">
+                            <label> Does the feature use cryptographic algorithms and secrets?</label>
+                            <ul>
+                                <li><input type="checkbox">
+                                    <label>Does the feature implement storage of keys and passwords?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Does the feature generate random numbers?</label>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <input class="parentCheckbox" type="checkbox">
+                            <label> Does the feature use database?</label>
+                            <ul>
+                                <li><input type="checkbox">
+                                    <label>Does the feature store passwords in database?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Does the feature execute SQL queries?</label>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <input class="parentCheckbox" type="checkbox">
+                            <label> Does the feature perform parsing on any of the following data formats? (E.g., XML,
+                                JSON etc.)</label>
+                            <ul>
+                                <li><input type="checkbox">
+                                    <label>Does the feature perform XML parsing where the XML data is provided as an
+                                        external or user input?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Does the feature perform JSON parsing where the JSON data is provided as an
+                                        external or user input?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Does the feature perform REGEX parsing where the REGEX expression is provided
+                                        as an external or user input?</label>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <input class="parentCheckbox" type="checkbox">
+                            <label>Does the feature implement logging?</label>
+                            <ul>
+                                <li><input type="checkbox">
+                                    <label>Does the feature use Log4J or other logging frameworks?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Does the feature log sensitive information? (e.g., username, IP address
+                                        etc.)</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <input class="parentCheckbox" type="checkbox">
+                            <label>Does the feature need access control to allow users to use the feature?</label>
+                            <ul>
+                                <li><input type="checkbox">
+                                    <label>Is the feature allowed to be used by administrator only?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Is the feature allowed to be used by selective roles only?</label>
+                                </li>
+                                <li><input type="checkbox">
+                                    <label>Is the feature allowed to be used by anonymous/guest users?</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <input class="parentCheckbox" type="checkbox">
+                            <label> Do you have new 3rd party component added as part of this feature?</label>
+                        </li>
+                        <li class="parent">
+                            <input class="parentCheckbox" type="checkbox">
+                            <label> General Recommendation</label>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="controls">
+                    <div class="controlButtons">
+                        <button id="naBtn">N/A</button>
+                        <button id="createBtn" disabled>Create</button>
+                        <button id="cancelBtn">Cancel</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="messageBox">
+                <div class="successMessageContainer">
+                    <div class="messageBody">
+                        <div class="messageHeader">Created user story
+                            <span class="userStory">
+
+                            </span>
+                        </div>
+                        <div class="subtasks">
+                            <div class="messageHeader">Created subtask(s)</div>
+                            <ol class="subtaskList">
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+			  <div class="successMessageBox">
+                <div class="successMessageContainer">
+                    <div class="messageBody">
+                        <div id="successMessage">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notificationBox">
+                <div class="notificationContainer">
+                    <div class="messageBody">
+                        <div id="notificationMessage">
+                        </div>
+                    </div>
+
+                    <div class="controlButtons">
+                        <button id="continueBtn">Yes</button>
+                        <button id="cancelBtn2">No</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="errorMessageBox">
+                <div class="errorMessageContainer">
+                    <div class="messageBody">
+                        <div class="messageHeader error">Error
+                            <span class="errorMessage">
+                                Error message
+                            </span>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="footer">
+                <p>
+                    This tool is provided by <strong>Security Engineering Team</strong>
+                </p>
+                <p>
+                    <a target="_blank" href="https://iwiki.eur.ad.sag/pages/viewpage.action?pageId=674645280"> Feature
+                        Security Impact Analysis Task Creator</a>
+                    | Contact us <strong> <a href="mailto:DevSecurity@softwareag.com"> DevSecurity@softwareag.com</a>
+                    </strong>
+                </p>
+
+
+            </div>
+        </div>
+
+
+        <!-- 
+        <div class="testFields">
+            Test fields
+            <form id="testForm">
+                <input type="text" id="parentItrac" value="PIE-61085">
+                <button> update</button>
+            </form>
+
+        </div> -->
+    </div>
+
+    <div class="loader" style="display: none;">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

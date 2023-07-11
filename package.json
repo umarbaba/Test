@@ -1,0 +1,19 @@
+{
+  "name": "code_roll_in",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "form-data": "^4.0.0",
+    "live-server-https": "0.0.2",
+    "node-fetch": "^2.6.0",
+    "request": "^2.88.2"
+  },
+  "description": ""
+}
